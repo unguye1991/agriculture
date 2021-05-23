@@ -25,7 +25,7 @@ public class Comment {
   private int id;
  
  
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "customer_nickname")
   private Customer customer;
 
