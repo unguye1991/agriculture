@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-//import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -25,7 +25,7 @@ public class Forum {
   private int id;
  
  
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "customer_nickname")
   private Customer customer;
  
