@@ -39,10 +39,9 @@ public class Courses {
 	public Courses() {
 		
 	}
-	public Courses(Seller seller, Customer customer, String coursename, String contact, String description) {
+	public Courses(Seller seller, String coursename, String contact, String description) {
 		// super();
 		this.seller = seller;
-		this.customer = customer;
 		this.coursename = coursename;
 		this.contact = contact;
 		this.description = description;
@@ -72,13 +71,6 @@ public class Courses {
 		this.description = description;
 	}
 	
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
 	public Seller getSeller() {
 		return seller;
 	}
