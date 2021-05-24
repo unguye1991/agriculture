@@ -71,7 +71,7 @@ public class Courses {
 		this.description = description;
 	}
 	
-	public Seller getCustomer() {
+	public customer getCustomer() {
 		return customer;
 	}
 
