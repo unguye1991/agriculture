@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,7 +23,11 @@ public class Courses {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@ManyToOne
+	@OneToOne
+	@JoinColumn(name = "seller_id")
+	private Seller seller;
+	
+	@OneToOne
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
@@ -39,8 +43,9 @@ public class Courses {
 	public Courses() {
 		
 	}
-	public Courses(Customer customer, String coursename, String contact, String description) {
+	public Courses(Seller seller, Customer customer, String coursename, String contact, String description) {
 		// super();
+		this.seller = seller;
 		this.customer = customer;
 		this.coursename = coursename;
 		this.contact = contact;
@@ -77,6 +82,13 @@ public class Courses {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+	public Seller getSeller() {
+		return seller;
+	}
+
+	public void setSeller(Seller seller) {
+		this.seller = seller;
 	}
 
 }
