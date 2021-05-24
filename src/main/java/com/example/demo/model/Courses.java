@@ -24,8 +24,8 @@ public class Courses {
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name = "seller_id")
-	private Seller seller;
+	@JoinColumn(name = "customer_id")
+	private Customer customer;
 	
 	@Column(name = "coursename")
 	private String coursename;
@@ -39,9 +39,9 @@ public class Courses {
 	public Courses() {
 		
 	}
-	public Courses(Seller seller, String coursename, String contact, String description) {
+	public Courses(Customer customer, String coursename, String contact, String description) {
 		// super();
-		this.seller = seller;
+		this.customer = customer;
 		this.coursename = coursename;
 		this.contact = contact;
 		this.description = description;
@@ -71,12 +71,12 @@ public class Courses {
 		this.description = description;
 	}
 	
-	public Seller getSeller() {
-		return seller;
+	public Seller getCustomer() {
+		return customer;
 	}
 
-	public void setSeller(Seller seller) {
-		this.seller = seller;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }
