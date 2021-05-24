@@ -50,8 +50,8 @@ public class CoursesController {
 	
 	// get courses by school id REST API
 	@GetMapping("/courses/customer/{customerId}")
-	public ResponseEntity<List<Courses>> getCoursesBycustomerid(@PathVariable int customerId) {
-		List<Courses> courses = CoursesRepository.findByCustomerId(customerId);
+	public ResponseEntity<List<Courses>> getCoursesBysellerid(@PathVariable int sellerId) {
+		List<Courses> courses = CoursesRepository.findBySellerId(sellerId);
 		return ResponseEntity.ok(courses);
 	}
 
